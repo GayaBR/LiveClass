@@ -9,7 +9,6 @@
 
 html,
 body {
-    height: 100vh;
     font-family: "Source Sans Pro", 'Times New Roman';
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -209,8 +208,13 @@ h4{
     cursor: pointer;
 }
 
+#email h4 {
+    padding-top: 20px;    
+}
+
 #email a{
     font-size: 18px;
+    margin-top: -20px;    
 }
 
 #social{
@@ -229,27 +233,26 @@ form textarea{
     padding-left: 15px;
     font-size: 18px;
     height: 45px;
-    margin-bottom: 0;
     font-family: "Source Sans Pro", 'Times New Roman';
-    border-radius: 20px;
+    margin-bottom: 0;       
+    border-radius: 20px;    
     border: 2px solid #0080ed;
+    margin-top: 20px;    
 }
 
-#subject_main label, #subject_main select{
-    display: inline-block;
-}
-
-#label{    
-    margin-bottom: 30px;
-    width: 70px;
-}
-
-#subject_main select{
-    width: 300px;
+#subject_main input, #subject_main select{
+    width: 380px;    
     padding-left: 15px;
     font-size: 18px;
     height: 45px;
+    font-family: "Source Sans Pro", 'Times New Roman';
     margin-bottom: 13px;
     border-radius: 20px;
     border: 2px solid #0080ed;
+    color: rgb(131,131,131);
 }
+
+#subject_main #send2{
+    color: white;
+}
+
