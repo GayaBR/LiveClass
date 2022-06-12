@@ -28,24 +28,47 @@
 }
 
 @media (max-width: 630px) {
-    nav {
-        display: none;
+
+    .menu-button-container{
+        display: flex;
     }
+
+    .menu{
+        position: absolute; /*assim, o menu não desce quando rola a tela*/
+        margin-top: 30px; /*pra não ficar em cima do header*/
+        flex-direction: column;
+        width: 100vw; /*para o menu ocupar a largura toda da tela"*/
+        justify-content: center;
+        align-items: center;
+        left: 100%; /*pro menu se abrir da direita pra esquerda*/
+        transform: translateX(100vw); /*para o menu vir da direita pra esquerda*/
+        transition: 0.5s ease transform; /*para a transição ser suave*/
+    }
+
+    .menu>li{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        color: white;
+        background-color: #0080ed;
+        border-radius: 5px;
+    }
+
+    .menu>li:not(:last-child){  /*para adicionar um espaço abaixo dos li's, menos do último"*/
+        border-bottom: 1px solid white;
+    }
+
+    .menu li a{  /*para o retângulo inteiro que contém a li seja clicável*/
+        flex: 1;
+        text-align: center;
+    }
+    
     main .container-menu img{
         display: none;
     }
-    .container-menu{
-        height: 100%;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #checkbox-menu {
-        position: absolute;
-        opacity: 0;
-    }
-
+    
     label{
         cursor: pointer;
         position: relative;
@@ -85,4 +108,15 @@
         transform: rotate(45deg);
         top: 8px
     }
+
+    nav.menu{
+        width: 100%; /*para dar tipo um estado inicial pra nav*/
+    }
+
+    #checkbox-menu:checked~nav .menu{
+        transform: translateX(-100vw);
+        transition: 0.5s ease transform;
+    }
+
+
 }
